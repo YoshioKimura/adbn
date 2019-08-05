@@ -1,27 +1,162 @@
 <!DOCTYPE html>
-<html lang="ja">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+<style type="text/css" media="screen">
+    #editor { 
+        /* position: absolute; */
+        /* top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;*/
+        width: 500px;
+        height: 500px;
+     }  
+</style>
 </head>
 
+    
 <body>
 
 
-    <script>
 
-        var aaa = "ああああああ"
-        var bbb = aaa.slice(0,"<p>")
-        console.log(aaa)
-        console.log(addtag_p(aaa))
 
-        function addtag_p(str) {
-            var res = `<p>${str}</p>`;
-            return res;
-        };
+        <style>
+                li {
+                  font: inherit;
+                  vertical-align: baseline;
+                  display: block;
+                  word-break: break-all;
+                  list-style: none;
+                  width: 100%;
+                  padding: 0;
+                  margin: 0;
+                }
+            
+                .gn-nad_frst_1429928 {
+                  overflow: hidden;
+                  text-decoration: none;
+                  display: block !important;
+                  list-style: none;
+                  position: relative !important;
+                  margin-bottom: 23px;
+                  border:solid #ccc 0px;
+
+                }
+            
+                .gn-nad_frst_1429928 a {
+                  text-decoration: none;
+                }
+            
+                .gn-nad_frst_img_1429928 {
+                  background-image: url(https://cdn.mamanoko.jp/attachments/7ca37a54992bc9218a496d030e25c8002b7fb81b/store/fill/78/78/d5059d165565885299cdfd25994147a7cf9d751db5aab20c92c4e381ecde/image.jpeg);
+                  background-size: cover;
+                  float: left;
+                  width: 80px;
+                  height: 80px;
+                  margin: 10px 10px 10px 10px;
+                  border-radius: 0px;
+                }
+            
+            
+                .gn-nad_frst_img-container_1429928 {
+                  text-decoration: none;
+                  font-family: "HiraKakuProN-W3", "Helvetica";
+                  margin: 0;
+                  padding: 0;
+                }
+            
+                .gn-nad_frst_text-container_1429928 {
+                  float: none;
+                  padding: 0;
+                  margin: 0;
+                }
+            
+                .gn-nad_frst_bottom-title_1429928 {
+                  color: #333;
+                  padding-right: 34px;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 4;
+                  overflow: hidden;
+                }
+            
+                .gn-nad_frst_bottom-title_1429928 a {
+                  text-decoration: none !important;
+                }
+            
+                .gn-nad_frst_pr {
+                  display: inline-block;
+                  position: absolute;
+                  font-family: "HiraKakuProN-W3", "Helvetica";
+                  font-size: 10px;
+                  color: #bbbcc1;
+                  bottom: 5px;
+                  right: 5px;
+                  font-weight: normal;
+                  line-height: 1;
+                }
+            
+                .gn-nad_frst_bottom-title_1429928 a {
+                  text-decoration: none !important;
+                  color: #bbbcc1;
+                }
+              </style>
+            
+              <div class="gn-nad_frst_1429928">
+                <a href="{landing-url}">
+                  <div class="gn-nad_frst_img-container_1429928">
+                    <div class="gn-nad_frst_img_1429928">
+                    </div>
+                    <div class="gn-nad_frst_text-container_1429928">
+                      <div class="gn-nad_frst_bottom-title_1429928">
+                        {title}
+                      </div>
+                      <div class="gn-nad_frst_pr">PR</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+<!-- <div id="editor">function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+}</div> -->
+
+<script src="https://cloud9ide.github.io/emmet-core/emmet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/html");
+    editor.session.setTabSize(2);
+    editor.setOptions({
+  enableEmmet: true
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+<script>
+
+        // var aaa = "ああああああ"
+        // var bbb = aaa.slice(0,"<p>")
+        // console.log(aaa)
+        // console.log(addtag_p(aaa))
+
+        // function addtag_p(str) {
+        //     var res = `<p>${str}</p>`;
+        //     return res;
+        // };
 
         // function strIns(str, idx, val) {
         //     var res = str.slice(0, idx) + val + str.slice(idx);

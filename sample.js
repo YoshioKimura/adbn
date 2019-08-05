@@ -14,6 +14,7 @@ $("#btn").on('click', function () {
   var frame_border_color = $("#frame_border_color").val();
   //title
   var title_color = $("#title_color").val();
+  var title_paddintop = $("#title_paddintop").val();
 
   //img
   var img_path = $("#img_path").val();
@@ -61,7 +62,7 @@ $("#btn").on('click', function () {
                 }
             
                 .gn-nad_frst_img_${zid} {
-                  background-image: url({icon-url});
+                  background-image: url(${img_path});
                   background-size: cover;
                   float: ${img_position};
                   width: ${img_width}px;
@@ -87,6 +88,7 @@ $("#btn").on('click', function () {
                 .gn-nad_frst_bottom-title_${zid} {
                   color: ${title_color};
                   padding-right: 34px;
+                  padding-top: ${title_paddintop};
                   display: -webkit-box;
                   -webkit-box-orient: vertical;
                   -webkit-line-clamp: 4;

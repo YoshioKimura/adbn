@@ -14,6 +14,9 @@
     h2,h3{
         margin: 0px;
     }
+    h1{
+        text-align: center;
+    }
     
     </style>
     <script  src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
@@ -21,6 +24,7 @@
 </head>
 <body>
 
+    <h1>バナージェネレータ</h1>
     <div class="wrapper">
     <div class="edit_area">
     <h2>画像の位置</h2>
@@ -41,9 +45,9 @@
     <div>枠の線の色:<input type="text" id="frame_border_color" value="#ccc"></div>
 
     <h3>画像の情報</h3>
-    <div>画像パス:<input type="text" id="img_path"></div>
-    <div>画像横幅:<input type="text" id="img_width" value="100"></div>
-    <div>画像高さ:<input type="text" id="img_height" value="100"></div>
+    <div>画像パス:<input type="text" id="img_path" value="https://cdn.mamanoko.jp/attachments/7ca37a54992bc9218a496d030e25c8002b7fb81b/store/fill/78/78/d5059d165565885299cdfd25994147a7cf9d751db5aab20c92c4e381ecde/image.jpeg"></div>
+    <div>画像横幅:<input type="text" id="img_width" value="80"></div>
+    <div>画像高さ:<input type="text" id="img_height" value="80"></div>
     <div>画像上余白(px)<input type="number" id="img_margin_top" value="10"></div>
     <div>画像左余白(px)<input type="number" id="img_margin_left" value="10"></div>
     <div>画像右余白(px)<input type="number" id="img_margin_right" value="10"></div>
@@ -56,10 +60,11 @@
     
     <h3>タイトルの情報</h3>
     <div>文字色<input type="text" id="title_color" value="#333"></div>
-    <div>文字サイズ<input type="text" id="title_font-size"></div>
+    <div>文字サイズ<input type="text" id="title_font-size" value="13px"></div>
     <div>文字フォント<input type="text" id="title_font-name"></div>
-    <div>文字太さ<input type="text" id="title_font-weight"></div>
-    <div>文字幅<input type="text" id="title_"></div>
+    <div>文字太さ<input type="text" id="title_font-weight" value="bold"></div>
+    <div>文字幅<input type="text" id="title_" value="1px"></div>
+    <div>上との余白<input type="text" id="title_paddintop" value="10px"></div>
     
     <h3 >広告情報</h3>
     <!-- <div>提供元名<input type="text" id="pr_name"></div> -->
