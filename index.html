@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .wrapper{
+        display: flex;
+    }
+
+    h2,h3{
+        margin: 0px;
+    }
+    
+    </style>
+    <script  src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    <script src="./sample.js"></script>
+</head>
+<body>
+
+    <div class="wrapper">
+    <div class="edit_area">
+    <h2>画像の位置</h2>
+    <select name="img_position" id="img_position">
+        <option value="left">左側に画像</option>
+        <option value="right">右側に画像</option>
+        <!-- <option value="top">上側に画像</option>
+        <option value="bottom">下側に画像</option> -->
+    </select>
+    <div class="omakase"><button id="omakase">デフォルト生成</button></div>
+
+    <h2>設定</h2>
+    <div>zid:<input type="text" id="zid" value="1429928"></div>
+    <div>媒体名:<input type="text" id="media-name" value="ままのて"></div>
+
+    <h3>枠の情報</h3>
+    <div>枠の線の太さ:<input type="number" id="frame_border_bold" value="0">px</div>
+    <div>枠の線の色:<input type="text" id="frame_border_color" value="#ccc"></div>
+
+    <h3>画像の情報</h3>
+    <div>画像パス:<input type="text" id="img_path"></div>
+    <div>画像横幅:<input type="text" id="img_width" value="100"></div>
+    <div>画像高さ:<input type="text" id="img_height" value="100"></div>
+    <div>画像上余白(px)<input type="number" id="img_margin_top" value="10"></div>
+    <div>画像左余白(px)<input type="number" id="img_margin_left" value="10"></div>
+    <div>画像右余白(px)<input type="number" id="img_margin_right" value="10"></div>
+    <div>画像下余白(px)<input type="number" id="img_margin_bottom" value="10"></div>
+    <div>画像の丸み<input type="number" id="img_border_radius" value="0">単位：<input type="text" id="img_border_radius_unit" value="px"></div> 
+    <!-- <div>媒体名:<input type="text" id="lllll"></div>
+    <div>媒体名:<input type="text" id="lllll"></div>
+    <div>媒体名:<input type="text" id="lllll"></div>
+    <div>媒体名:<input type="text" id="lllll"></div> -->
+    
+    <h3>タイトルの情報</h3>
+    <div>文字色<input type="text" id="title_color" value="#333"></div>
+    <div>文字サイズ<input type="text" id="title_font-size"></div>
+    <div>文字フォント<input type="text" id="title_font-name"></div>
+    <div>文字太さ<input type="text" id="title_font-weight"></div>
+    <div>文字幅<input type="text" id="title_"></div>
+    
+    <h3 >広告情報</h3>
+    <!-- <div>提供元名<input type="text" id="pr_name"></div> -->
+    <div>色<input type="text" id="pr_text_color" value="#bbbcc1" placeholder="#bbbcc1"></div>
+    <div>文字の大きさ<input type="text" id="pr_font_size" value="10px"></div>
+    <div>bottom<input type="text" id="pr_position_bottom" value="5px"></div>
+    <div>right<input type="text" id="pr_position_right" value="5px"></div>
+
+
+    <h3>オプトアウトアイコン</h3>
+    <div>提供元名<input type="text" id="optout"></div>
+    <div>色<input type="text" id="optout"></div>
+    <div>文字の大きさ<input type="text" id="optout"></div>
+    <div>bottom<input type="text" id="optout"></div>
+    <div>right<input type="text" id="optout"></div>
+
+    <button id="btn">送信aaaa</button>
+</div>
+    <div class="result_area">
+        <button id="btn2">すべてコピーする</button>
+        <textarea name="" id="result" cols="150" rows="80"></textarea>
+
+    </div>
+
+
+    <script>
+    
+    $("#omakase").on('click',function(){
+        $("#result").val(html);
+    });
+
+
+    $("#btn2").on('click',function(){
+        $("#result").select();
+        document.execCommand('copy');
+    });
+
+    $('textarea').focus(function(){
+        $(this).select();
+        document.execCommand('copy');
+
+  });
+    
+    </script>
+    
+
+
+</div>
+</body>
+</html>
