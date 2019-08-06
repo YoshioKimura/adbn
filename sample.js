@@ -12,6 +12,7 @@ $("#btn").on('click', function () {
   //frame
   var frame_border_bold = $("#frame_border_bold").val();
   var frame_border_color = $("#frame_border_color").val();
+  var frame_background_color = $("#frame_background_color").val();
   //title
   var title_color = $("#title_color").val();
   var title_paddintop = $("#title_paddintop").val();
