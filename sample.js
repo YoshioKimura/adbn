@@ -2,8 +2,9 @@
 $(function(){
 
 var html;
-$("#btn").on('click', function () {
+// $("#btn").on('click', function () {
 
+function render(){
   var img_position = $("#img_position").val();
   var zid = $("#zid").val();
   var color = $("#advertiser_text_color").val();
@@ -132,8 +133,32 @@ $("#btn").on('click', function () {
                   </div>
                 </a>
               </div>`
-              $("#result").val(html);
-              
+              $("#result_code").val(html);
+
+              var iframe = document.getElementById("iframe-preview");
+              iframe.contentWindow.document.body.innerHTML = html;        
+// });
+};
+render();
+
+
+$("#reload").on('click', render);
+
+
+$("#btn2").on('click', function () {
+    
+    $("#result_code").css("display","block");
+    $("#result_code").select();
+    document.execCommand('copy');
+});
+
+$('textarea').focus(function () {
+    $(this).select();
+    document.execCommand('copy');
+});
+
+window.document.body.addEventListener('change', (event) => {
+  console.log(123);
 });
 
 
