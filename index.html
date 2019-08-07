@@ -25,6 +25,14 @@
             display: none;
         }
 
+        .textcolor-flash{
+            color:#FF6969;
+        }
+
+        .bgcolor-flash{
+            background:#FF6969;
+        }
+
         
     </style>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -53,7 +61,7 @@
             <h3>枠の情報</h3>
             <div>枠の線の太さ:<input type="number" id="frame_border_bold" value="0">px</div>
             <div>枠の線の色:<input type="text" id="frame_border_color" value="#ccc"></div>
-            <div>背景色:<input type="text" id="frame_background_color" value=""></div>
+            <div>背景色:<input type="text" id="frame_background_color" value="transparent"></div>
 
             <h3>画像の情報</h3>
             <div>画像パス:<input type="text" id="img_path"
@@ -75,7 +83,7 @@
             <h3>タイトルの情報</h3>
             <div>文字色<input type="text" id="title_color" value="#333"></div>
             <div>文字サイズ<input type="text" id="title_font-size" value="13px"></div>
-            <div>文字フォント<input type="text" id="title_font-name"></div>
+            <div>文字フォント<input type="text" id="title_font-family" value='-apple-system, system-ui, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif'></div>
             <div>文字太さ<input type="text" id="title_font-weight" value="bold"></div>
             <div>文字幅<input type="text" id="title_" value="1px"></div>
             <div>上との余白<input type="text" id="title_paddintop" value="10px"></div>
