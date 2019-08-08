@@ -8,7 +8,10 @@ $(function(){
 
 
   //frame
-  var frame_border_bold;
+  var frame_border_bold_top;
+  var frame_border_bold_bottom;
+  var frame_border_bold_right;
+  var frame_border_bold_left;
   var frame_border_color;
   var frame_background_color;
   //title
@@ -41,7 +44,10 @@ $(function(){
   
   
   //frame
-  frame_border_bold = $("#frame_border_bold").val();
+  frame_border_bold_top = $("#frame_border_bold_top").val();
+  frame_border_bold_bottom = $("#frame_border_bold_bottom").val();
+  frame_border_bold_right = $("#frame_border_bold_right").val();
+  frame_border_bold_left = $("#frame_border_bold_left").val();
   frame_border_color = $("#frame_border_color").val();
   frame_background_color = $("#frame_background_color").val();
   //title
@@ -107,8 +113,10 @@ $(function(){
                   display: block !important;
                   list-style: none;
                   position: relative !important;
-                  margin-bottom: 23px;
-                  border:solid ${frame_border_color} ${frame_border_bold}px;
+                  border-top:solid ${frame_border_color} ${frame_border_bold_top}px;
+                  border-bottom:solid ${frame_border_color} ${frame_border_bold_bottom}px;
+                  border-right:solid ${frame_border_color} ${frame_border_bold_right}px;
+                  border-left:solid ${frame_border_color} ${frame_border_bold_left}px;
                   background:${frame_background_color};
                 }
             
@@ -151,7 +159,19 @@ $(function(){
                   overflow: hidden;
                   font-weight:${title_font_weight};
                 }
-            
+
+                .gn-nad_frst_bottom-description_${zid} {
+                  color: ${title_color};
+                  padding-right: 34px;
+                  padding-top: ${title_paddintop}px;
+                  font-size: ${title_font_size}px;
+                  display: none;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 2;
+                  overflow: hidden;
+                  font-weight:${title_font_weight};
+                }
+          
                 .gn-nad_frst_bottom-title_${zid} a {
                   text-decoration: none !important;
                 }
@@ -183,18 +203,26 @@ $(function(){
                       <div class="gn-nad_frst_bottom-title_${zid}">
                         {title}
                       </div>
+                      <div class="gn-nad_frst_bottom-description_${zid}">
+                        ${`{description}`}
+                      </div>
                       <div class="gn-nad_frst_pr_${zid}">PR</div>
                     </div>
                   </div>
                 </a>
-              </div>`
+              </div>
+              
+              
+              <p><input type="checkbox" name="" id="enlarge_text">テキスト部分を長くする</p>
+              
+              `
               $("#result_code").val(html);
 
               var iframe = document.getElementById("iframe-preview");
               iframe.contentWindow.document.body.innerHTML = html;        
 // });
 };
-// render();
+render();
 
 
 $(`input:not([data-info='meta'])`).on('focus',function(){
@@ -206,6 +234,20 @@ $(`input:not([data-info='meta'])`).on('focus',function(){
       $('iframe').contents().find(`.${className}`).removeClass('bgcolor-flash');
       next();
     });
+});
+
+$(`#frame_border_bold_top`).on('keyup',function(){ 
+    frameTopVal = $(`#frame_border_bold_top`).val();
+    console.log(frameTopVal);
+
+    $(`#frame_border_bold_bottom`).val(frameTopVal);
+    $(`#frame_border_bold_right`).val(frameTopVal);
+    $(`#frame_border_bold_left`).val(frameTopVal);
+    frame_border_bold_top = frameTopVal + "px";
+    frame_border_bold_bottom = frameTopVal + "px";
+    frame_border_bold_right = frameTopVal + "px";
+    frame_border_bold_left = frameTopVal + "px";
+    
 });
 
 function addZid(classname){
