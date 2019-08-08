@@ -44,64 +44,67 @@
 
     <h1>バナージェネレータ</h1>
     <div class="wrapper">
-        <div class="edit_area">
+        <div class="edit_area" style="height:500px;overflow:auto;">
             <h2>画像の位置</h2>
             <select name="img_position" id="img_position">
-                <option value="left">左側に画像</option>
-                <option value="right">右側に画像</option>
-                <!-- <option value="top">上側に画像</option>
-        <option value="bottom">下側に画像</option> -->
+                <option data-classname="gn-nad_frst_" value="left">左側に画像</option>
+                <option data-classname="gn-nad_frst_" value="right">右側に画像</option>
+                <!-- <option data-classname="gn-nad_frst_" value="top">上側に画像</option>
+        <option data-classname="gn-nad_frst_" value="bottom">下側に画像</option> -->
             </select>
             <div class="reload"><button id="reload">リロード</button></div>
 
             <h2>設定</h2>
-            <div>zid:<input type="text" id="zid" value="1429928"></div>
-            <div>媒体名:<input type="text" id="media-name" value="ままのて"></div>
+            <div>zid:<input type="text" id="zid" data-classname="gn-nad_frst_" data-info="meta" value="1429928"></div>
+            <div>媒体名:<input type="text" id="media-name" data-classname="gn-nad_frst_" data-info="meta" value="ままのて"></div>
 
             <h3>枠の情報</h3>
-            <div>枠の線の太さ:<input type="number" id="frame_border_bold" value="0">px</div>
-            <div>枠の線の色:<input type="text" id="frame_border_color" value="#ccc"></div>
-            <div>背景色:<input type="text" id="frame_background_color" value="transparent"></div>
+            <div>枠の線の太さ:<input type="number" id="frame_border_bold" data-classname="gn-nad_frst_" value="0">px</div>
+            <div>枠の線の色:<input type="text" id="frame_border_color" data-classname="gn-nad_frst_" value="#ccc"></div>
+            <div>背景色:<input type="text" id="frame_background_color" data-classname="gn-nad_frst_" value="transparent"></div>
 
             <h3>画像の情報</h3>
             <div>画像パス:<input type="text" id="img_path"
-                    value="https://cdn.mamanoko.jp/attachments/7ca37a54992bc9218a496d030e25c8002b7fb81b/store/fill/78/78/d5059d165565885299cdfd25994147a7cf9d751db5aab20c92c4e381ecde/image.jpeg">
+                    data-classname="gn-nad_frst_" value="https://cdn.mamanoko.jp/attachments/7ca37a54992bc9218a496d030e25c8002b7fb81b/store/fill/78/78/d5059d165565885299cdfd25994147a7cf9d751db5aab20c92c4e381ecde/image.jpeg">
             </div>
-            <div>画像横幅:<input type="number" id="img_width" value="80"></div>
-            <div>画像高さ:<input type="number" id="img_height" value="80"></div>
-            <div>画像上余白(px)<input type="number" id="img_margin_top" value="10"></div>
-            <div>画像左余白(px)<input type="number" id="img_margin_left" value="10"></div>
-            <div>画像右余白(px)<input type="number" id="img_margin_right" value="10"></div>
-            <div>画像下余白(px)<input type="number" id="img_margin_bottom" value="10"></div>
-            <div>画像の丸み<input type="number" id="img_border_radius" value="0">単位：<input type="text"
-                    id="img_border_radius_unit" value="px"></div>
+            <div>画像横幅:<input type="number" id="img_width" data-classname="gn-nad_frst_img_" value="80"></div>
+            <div>画像高さ:<input type="number" id="img_height" data-classname="gn-nad_frst_img_" value="80"></div>
+            <div>画像上余白(px)<input type="number" id="img_margin_top" data-classname="gn-nad_frst_img_" value="10"></div>
+            <div>画像左余白(px)<input type="number" id="img_margin_left" data-classname="gn-nad_frst_img_" value="10"></div>
+            <div>画像右余白(px)<input type="number" id="img_margin_right" data-classname="gn-nad_frst_img_" value="10"></div>
+            <div>画像下余白(px)<input type="number" id="img_margin_bottom" data-classname="gn-nad_frst_img_" value="10"></div>
+            <div>画像の丸み<input type="number" id="img_border_radius" data-classname="gn-nad_frst_img_" value="0">単位：<input type="text"
+                    id="img_border_radius_unit" data-classname="gn-nad_frst_" value="px"></div>
             <!-- <div>媒体名:<input type="text" id="lllll"></div>
     <div>媒体名:<input type="text" id="lllll"></div>
     <div>媒体名:<input type="text" id="lllll"></div>
     <div>媒体名:<input type="text" id="lllll"></div> -->
 
             <h3>タイトルの情報</h3>
-            <div>文字色<input type="text" id="title_color" value="#333"></div>
-            <div>文字サイズ<input type="text" id="title_font-size" value="13px"></div>
-            <div>文字フォント<input type="text" id="title_font-family" value='-apple-system, system-ui, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif'></div>
-            <div>文字太さ<input type="text" id="title_font-weight" value="bold"></div>
-            <div>文字幅<input type="text" id="title_" value="1px"></div>
-            <div>上との余白<input type="text" id="title_paddintop" value="10px"></div>
+            <div>文字色<input type="text" id="title_color" data-classname="gn-nad_frst_bottom-title_" value="#333"></div>
+            <div>文字サイズ<input type="number" id="title_font_size" data-classname="gn-nad_frst_bottom-title_" value="13"></div>
+            <div>文字フォント<input type="text" id="title_font-family" data-classname="gn-nad_frst_bottom-title_" value='-apple-system, system-ui, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif'></div>
+            <div>文字太さ<input type="text" id="title_font_weight" data-classname="gn-nad_frst_bottom-title_" value="bold"></div>
+            <div>上との余白<input type="number" id="title_paddintop" data-classname="gn-nad_frst_bottom-title_" value="10"></div>
 
-            <h3>広告情報</h3>
+            <div>説明文の有無<input type="checkbox" id="description-exist"></div>
+            <div id="description_area"></div>
+
+            <h3>提供元名(PR表記部分)</h3>
             <!-- <div>提供元名<input type="text" id="pr_name"></div> -->
-            <div>色<input type="text" id="pr_text_color" value="#bbbcc1" placeholder="#bbbcc1"></div>
-            <div>文字の大きさ<input type="text" id="pr_font_size" value="10px"></div>
-            <div>bottom<input type="text" id="pr_position_bottom" value="5px"></div>
-            <div>right<input type="text" id="pr_position_right" value="5px"></div>
+            <div>色<input type="text" id="pr_text_color" data-classname="gn-nad_frst_pr_" value="#bbbcc1" placeholder="#bbbcc1"></div>
+            <div>文字の大きさ<input type="number" id="pr_font_size" data-classname="gn-nad_frst_pr_" value="10"></div>
+            <div>bottom<input type="number" id="pr_position_bottom" data-classname="gn-nad_frst_pr_" value="5"></div>
+            <div>right<input type="number" id="pr_position_right" data-classname="gn-nad_frst_pr_" value="5"></div>
 
-
+            
             <h3>オプトアウトアイコン</h3>
             <div>提供元名<input type="text" id="optout"></div>
             <div>色<input type="text" id="optout"></div>
             <div>文字の大きさ<input type="text" id="optout"></div>
             <div>bottom<input type="text" id="optout"></div>
             <div>right<input type="text" id="optout"></div>
+            
 
             <button id="btn">送信</button>
         </div>

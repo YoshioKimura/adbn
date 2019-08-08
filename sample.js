@@ -16,6 +16,8 @@ $(function(){
   var title_paddintop;
 
   //img
+
+  var img = {}
   var img_path;
   var img_width;
   var img_height;
@@ -45,6 +47,8 @@ $(function(){
   //title
   title_color = $("#title_color").val();
   title_paddintop = $("#title_paddintop").val();
+  title_font_size = $("#title_font_size").val();
+  title_font_weight = $("#title_font_weight").val();
 
   //img
   img_path = $("#img_path").val();
@@ -71,6 +75,19 @@ $(function(){
 
                   .bgcolor-flash{
                       background:#FF6969 !important;
+                  }
+
+                  .top-flash{
+                    border-top:solid 10px #FF6969 !important;
+                  }
+                  .bottom-flash{
+                    border-top:solid 10px #FF6969 !important;
+                  }
+                  .left-flash{
+                    border-left:solid 10px #FF6969 !important;
+                  }
+                  .right-flash{
+                    border-right:solid 10px #FF6969 !important;
                   }
 
                 li {
@@ -126,26 +143,28 @@ $(function(){
                 .gn-nad_frst_bottom-title_${zid} {
                   color: ${title_color};
                   padding-right: 34px;
-                  padding-top: ${title_paddintop};
+                  padding-top: ${title_paddintop}px;
+                  font-size: ${title_font_size}px;
                   display: -webkit-box;
                   -webkit-box-orient: vertical;
                   -webkit-line-clamp: 4;
                   overflow: hidden;
+                  font-weight:${title_font_weight};
                 }
             
                 .gn-nad_frst_bottom-title_${zid} a {
                   text-decoration: none !important;
                 }
             
-                .gn-nad_frst_pr {
+                .gn-nad_frst_pr_${zid} {
                   display: inline-block;
                   position: absolute;
                   font-family: "HiraKakuProN-W3", "Helvetica";
-                  font-size: ${pr_font_size};
+                  font-size: ${pr_font_size}px;
                   color: #bbbcc1;
                   bottom: ${pr_position_bottom};
                   right: ${pr_position_right};
-                  font-weight: normal;
+                  font-weight: ${title_font_weight};
                   line-height: 1;
                 }
             
@@ -164,7 +183,7 @@ $(function(){
                       <div class="gn-nad_frst_bottom-title_${zid}">
                         {title}
                       </div>
-                      <div class="gn-nad_frst_pr">PR</div>
+                      <div class="gn-nad_frst_pr_${zid}">PR</div>
                     </div>
                   </div>
                 </a>
@@ -175,20 +194,28 @@ $(function(){
               iframe.contentWindow.document.body.innerHTML = html;        
 // });
 };
-render();
+// render();
 
 
-$("input").on('focus',function(){
-    // console.log($(this).attr(data));
-    console.log($('iframe').contents().find(`[class=gn-nad_frst_${zid}]`));
-    $('iframe').contents().find(`[class=gn-nad_frst_${zid}]`).addClass('bgcolor-flash').delay(500).queue(function(next){
-      $('iframe').contents().find(`.gn-nad_frst_${zid}`).removeClass('bgcolor-flash');
-      next();  
+$(`input:not([data-info='meta'])`).on('focus',function(){
+    console.log($(this).data("classname"));
+    var className = addZid($(this).data("classname"));
+    console.log(className)
+    // console.log($('iframe').contents().find(`.${className}`));
+    $('iframe').contents().find(`.${className}`).addClass('bgcolor-flash').delay(100).queue(function(next){
+      $('iframe').contents().find(`.${className}`).removeClass('bgcolor-flash');
+      next();
     });
 });
 
+function addZid(classname){
+  var classNameAndZid = classname + zid;
+  return classNameAndZid;
+}
+
 $("#reload").on('click', render);
 
+$("#btn").on('click',render);
 
 $("#btn2").on('click', function () {
     
@@ -203,10 +230,15 @@ $('textarea').focus(function () {
 });
 
 window.document.body.addEventListener('change', () => {
-  console.log(123);
   render();
 });
 
+$("#description-exist").on('change',function(){
+  var status = $(this).prop("checked");
+  console.log(status)
+  // if()
+
+});
 // $("h2").on('click', render);
 
 
