@@ -301,7 +301,6 @@ function addEventTextEnlargeCheck(){
     var sampleText = $(this).prop("checked") ? "親譲りの無鉄砲で子供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間程腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかもしれぬ。別段深い理由でもない。" : "{title}";
     console.log(sampleText)
     $('iframe').contents().find(`.gn-nad_frst_bottom-title_${zid}`).html(sampleText)
-    // if(){
   });  
 }
 addEventTextEnlargeCheck();
