@@ -55,6 +55,7 @@ $(function(){
   title_paddintop = $("#title_paddintop").val();
   title_font_size = $("#title_font_size").val();
   title_font_weight = $("#title_font_weight").val();
+  title_line_clamp = $("#title_line_clamp").val();
 
   //img
   img_path = $("#img_path").val();
@@ -76,24 +77,24 @@ $(function(){
 
   html = `<style>
                   .textcolor-flash{
-                      color:#FF6969 !important;
+                      color:#FEF37F !important;
                   }
 
                   .bgcolor-flash{
-                      background:#FF6969 !important;
+                      background:#FEF37F !important;
                   }
 
                   .top-flash{
-                    border-top:solid 10px #FF6969 !important;
+                    border-top:solid 10px #FEF37F !important;
                   }
                   .bottom-flash{
-                    border-top:solid 10px #FF6969 !important;
+                    border-top:solid 10px #FEF37F !important;
                   }
                   .left-flash{
-                    border-left:solid 10px #FF6969 !important;
+                    border-left:solid 10px #FEF37F !important;
                   }
                   .right-flash{
-                    border-right:solid 10px #FF6969 !important;
+                    border-right:solid 10px #FEF37F !important;
                   }
 
                 li {
@@ -120,7 +121,7 @@ $(function(){
                   background:${frame_background_color};
                 }
             
-                .gn-nad_frst_${zid} a {
+                a {
                   text-decoration: none;
                 }
             
@@ -150,12 +151,12 @@ $(function(){
             
                 .gn-nad_frst_bottom-title_${zid} {
                   color: ${title_color};
-                  padding-right: 34px;
+                  padding-right: 10px;
                   padding-top: ${title_paddintop}px;
                   font-size: ${title_font_size}px;
                   display: -webkit-box;
                   -webkit-box-orient: vertical;
-                  -webkit-line-clamp: 4;
+                  -webkit-line-clamp: ${title_line_clamp};
                   overflow: hidden;
                   font-weight:${title_font_weight};
                 }
@@ -194,8 +195,8 @@ $(function(){
                 }
               </style>
             
-              <div class="gn-nad_frst_${zid}">
-                <a href="{landing-url}">
+              <a href="{landing-url}">
+                <div class="gn-nad_frst_${zid}">
                   <div class="gn-nad_frst_img-container_${zid}">
                     <div class="gn-nad_frst_img_${zid}">
                     </div>
@@ -209,8 +210,8 @@ $(function(){
                       <div class="gn-nad_frst_pr_${zid}">PR</div>
                     </div>
                   </div>
-                </a>
-              </div>
+                </div>
+              </a>
               
               
               <p><input type="checkbox" name="" id="enlarge_text">テキスト部分を長くする</p>
@@ -273,6 +274,7 @@ $('textarea').focus(function () {
 
 window.document.body.addEventListener('change', () => {
   render();
+  addEventTextEnlargeCheck();
 });
 
 $("#description-exist").on('change',function(){
@@ -281,7 +283,21 @@ $("#description-exist").on('change',function(){
   // if()
 
 });
-// $("h2").on('click', render);
+
+// $(document).on('','change',function(){
+
+// });
+
+
+function addEventTextEnlargeCheck(){
+  $('iframe').contents().find(`input[type='checkbox']`).change(function(){
+    var sampleText = $(this).prop("checked") ? "親譲りの無鉄砲で子供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間程腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかもしれぬ。別段深い理由でもない。" : "{title}";
+    console.log(sampleText)
+    $('iframe').contents().find(`.gn-nad_frst_bottom-title_${zid}`).html(sampleText)
+    // if(){
+  });  
+}
+addEventTextEnlargeCheck();
 
 
 });
