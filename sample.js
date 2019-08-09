@@ -36,6 +36,7 @@ $(function(){
   var pr_font_size;
   var pr_position_bottom;
   var pr_position_right;
+  var pr_position_left;
   
   function render(){
     zid = $("#zid").val();
@@ -73,6 +74,8 @@ $(function(){
   pr_font_size = $("#pr_font_size").val();
   pr_position_bottom = $("#pr_position_bottom").val();
   pr_position_right = $("#pr_position_right").val();
+  pr_position_left = $("#pr_position_left").val();
+
 
 
   html = `<style>
@@ -181,17 +184,17 @@ $(function(){
                   display: inline-block;
                   position: absolute;
                   font-family: "HiraKakuProN-W3", "Helvetica";
+                  color: ${pr_text_color};
                   font-size: ${pr_font_size}px;
-                  color: #bbbcc1;
                   bottom: ${pr_position_bottom};
                   right: ${pr_position_right};
+                  left: ${pr_position_left};
                   font-weight: ${title_font_weight};
                   line-height: 1;
                 }
             
                 .gn-nad_frst_bottom-title_${zid} a {
                   text-decoration: none !important;
-                  color: ${pr_text_color};
                 }
               </style>
             
@@ -240,7 +243,6 @@ $(`input:not([data-info='meta'])`).on('focus',function(){
 $(`#frame_border_bold_top`).on('keyup',function(){ 
     frameTopVal = $(`#frame_border_bold_top`).val();
     console.log(frameTopVal);
-
     $(`#frame_border_bold_bottom`).val(frameTopVal);
     $(`#frame_border_bold_right`).val(frameTopVal);
     $(`#frame_border_bold_left`).val(frameTopVal);
@@ -248,7 +250,6 @@ $(`#frame_border_bold_top`).on('keyup',function(){
     frame_border_bold_bottom = frameTopVal + "px";
     frame_border_bold_right = frameTopVal + "px";
     frame_border_bold_left = frameTopVal + "px";
-    
 });
 
 function addZid(classname){
@@ -261,7 +262,6 @@ $("#reload").on('click', render);
 $("#btn").on('click',render);
 
 $("#btn2").on('click', function () {
-    
     $("#result_code").css("display","block");
     $("#result_code").select();
     document.execCommand('copy');
@@ -280,13 +280,20 @@ window.document.body.addEventListener('change', () => {
 $("#description-exist").on('change',function(){
   var status = $(this).prop("checked");
   console.log(status)
-  // if()
-
 });
 
-// $(document).on('','change',function(){
-
-// });
+$("#img_position").on('change',function(){
+  var imgPosition = $("#img_position").val();
+  console.log(imgPosition)
+  if(imgPosition == "left"){
+    $("#pr_position_right").val(5);
+    $("#pr_position_left").val("auto");
+  }else if(imgPosition == "right"){
+    $("#pr_position_right").val("auto");
+    $("#pr_position_left").val(5);
+  }
+  render();
+});
 
 
 function addEventTextEnlargeCheck(){
