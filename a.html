@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/uikit.min.css" />
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+  <style>
+    .textcolor-flash {
+      color: #FEF37F !important;
+    }
+
+    .bgcolor-flash {
+      background: #FEF37F !important;
+    }
+
+    .top-flash {
+      border-top: solid 10px #FEF37F !important;
+    }
+
+    .bottom-flash {
+      border-top: solid 10px #FEF37F !important;
+    }
+
+    .left-flash {
+      border-left: solid 10px #FEF37F !important;
+    }
+
+    .right-flash {
+      border-right: solid 10px #FEF37F !important;
+    }
+
+    li {
+      font: inherit;
+      vertical-align: baseline;
+      display: block;
+      word-break: break-all;
+      list-style: none;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .gn-nad_frst_1429928 {
+      overflow: hidden;
+      text-decoration: none;
+      display: block !important;
+      list-style: none;
+      position: relative !important;
+      border-top: solid #ccc 1px;
+      border-bottom: solid #ccc 1px;
+      border-right: solid #ccc 1px;
+      border-left: solid #ccc 1px;
+      background: transparent;
+    }
+
+    .gn-nad_frst_1429928_topbottom {
+      overflow: hidden;
+      text-decoration: none;
+      display: block !important;
+      list-style: none;
+      position: relative !important;
+      border-top: solid #ccc 1px;
+      border-bottom: solid #ccc 1px;
+      border-right: solid #ccc 1px;
+      border-left: solid #ccc 1px;
+      background: transparent;
+      width: 172px;
+      margin: auto;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .gn-nad_frst_img_1429928 {
+      background-image: url(http://hichip.sakura.ne.jp/countdown/yot.jpg);
+      background-size: cover;
+      float: left;
+      width: 80px;
+      height: 80px;
+      margin: 10px 10px 10px 10px;
+      border-radius: 0px;
+    }
+
+    .gn-nad_frst_img_1429928_top {
+      background-image: url(http://hichip.sakura.ne.jp/countdown/yot.jpg);
+      background-size: cover;
+      width: 150px;
+      height: 150px;
+      margin: 10px 10px 10px 10px;
+      border-radius: 0px;
+    }
+
+    .gn-nad_frst_img_1429928_right {
+      background-image: url(http://hichip.sakura.ne.jp/countdown/yot.jpg);
+      background-size: cover;
+      float: right;
+      width: 80px;
+      height: 80px;
+      margin: 10px 10px 10px 10px;
+      border-radius: 0px;
+    }
+
+
+
+    .gn-nad_frst_img-container_1429928 {
+      text-decoration: none;
+      font-family: "HiraKakuProN-W3", "Helvetica";
+      margin: 0;
+      padding: 0;
+    }
+
+    .gn-nad_frst_text-container_1429928 {
+      float: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .gn-nad_frst_bottom-title_1429928 {
+      color: #333;
+      padding-right: 10px;
+      padding-top: 10px;
+      font-size: 13px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      font-weight: bold;
+    }
+
+    .gn-nad_frst_bottom-description_1429928 {
+      color: #333;
+      padding-right: 34px;
+      padding-top: 10px;
+      font-size: 13px;
+      display: none;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      font-weight: bold;
+    }
+
+    .gn-nad_frst_bottom-description_1429928_top {
+      color: #333;
+      padding-right: 34px;
+      padding-top: 10px;
+      font-size: 13px;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      font-weight: bold;
+    }
+
+    .gn-nad_frst_bottom-title_1429928 a {
+      text-decoration: none !important;
+    }
+
+    .gn-nad_frst_pr_1429928 {
+      display: inline-block;
+      position: absolute;
+      font-family: "HiraKakuProN-W3", "Helvetica";
+      color: #bbbcc1;
+      font-size: 10px;
+      bottom: 5;
+      right: 5;
+      left: auto;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .gn-nad_frst_bottom-title_1429928 a {
+      text-decoration: none !important;
+    }
+  </style>
+  </style>
+</head>
+
+<body>
+
+
+
+
+
+  <div class="uk-child-width-3-4@m uk-flex-center uk-grid">
+    <h2 style="text-align: center">作成するバナータイプを選んで下さい</h2>
+    <!-- <div>カラム１</div>
+        <div>カラム２</div>
+        <div>カラム３</div> -->
+    <form method="GET">
+
+      <div class="uk-flex">
+
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-4@m">
+          <input class="uk-radio" name="bannertype" type="radio" id="radio_id">
+          <label for="radio_id">
+            <span class="uk-card-title">左に画像</span>
+          </label>
+          <a href="{landing-url}">
+            <div class="gn-nad_frst_1429928">
+              <div class="gn-nad_frst_img-container_1429928">
+                <div class="gn-nad_frst_img_1429928">
+                </div>
+                <div class="gn-nad_frst_text-container_1429928">
+                  <div class="gn-nad_frst_bottom-title_1429928">
+                    {title}
+                  </div>
+                  <div class="gn-nad_frst_bottom-description_1429928">
+                    {description}
+                  </div>
+                  <div class="gn-nad_frst_pr_1429928">PR</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-4@m uk-margin-left">
+          <input class="uk-radio" name="bannertype" type="radio" id="radio_id2">
+          <label for="radio_id2">
+            <span class="uk-card-title">右に画像</span>
+          </label>
+          <a href="{landing-url}">
+            <div class="gn-nad_frst_1429928">
+              <div class="gn-nad_frst_img-container_1429928">
+                <div class="gn-nad_frst_img_1429928_right">
+                </div>
+                <div class="gn-nad_frst_text-container_1429928">
+                  <div class="gn-nad_frst_bottom-title_1429928">
+                    {title}
+                  </div>
+                  <div class="gn-nad_frst_bottom-description_1429928">
+                    {description}
+                  </div>
+                  <div class="gn-nad_frst_pr_1429928">PR</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-4@m uk-margin-left">
+          <input class="uk-radio" name="bannertype" type="radio" id="radio_id3">
+
+          <label for="radio_id3">
+            <span class="uk-card-title">上に画像</span>
+          </label>
+          <a href="{landing-url}">
+            <div class="gn-nad_frst_1429928_topbottom">
+              <div class="gn-nad_frst_img-container_1429928">
+                <div class="gn-nad_frst_img_1429928_top">
+                </div>
+                <div class="gn-nad_frst_text-container_1429928">
+                  <div class="gn-nad_frst_bottom-title_1429928">
+                    {title}
+                  </div>
+                  <div class="gn-nad_frst_bottom-description_1429928_top">
+                    {description}
+                  </div>
+                  <div class="gn-nad_frst_pr_1429928">PR</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        </label>
+
+
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-4@m uk-margin-left">
+          <input class="uk-radio" name="bannertype" type="radio" id="radio_id4">
+          <label for="radio_id4">
+            <span class="uk-card-title">下に画像</span>
+          </label>
+          <a href="{landing-url}">
+            <div class="gn-nad_frst_1429928_topbottom">
+              <div class="gn-nad_frst_img-container_1429928">
+
+                <div class="gn-nad_frst_text-container_1429928">
+                  <div class="gn-nad_frst_bottom-title_1429928">
+                    {title}
+                  </div>
+                  <div class="gn-nad_frst_bottom-description_1429928">
+                    {description}
+                  </div>
+                  <div class="gn-nad_frst_img_1429928_top">
+                    </div>
+                  <div class="gn-nad_frst_pr_1429928">PR</div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+      <button type="submit" href="index.html" target="_blank" class="uk-button uk-button-primary">作成する</button>
+    </form>
+  </div>
+
+
+  <!-- <div class="uk-column-1-2">
+
+        <p class="uk-column-span"></p>
+
+        <form>
+            <div class="uk-margin">
+                <input class="uk-input uk-form-width-medium" type="text" placeholder="Default">
+            </div>
+
+            <select class="uk-select">
+                <option>aaa</option>
+                <option>bbb</option>
+            </select>
+            理由を入力して下さい
+            <textarea class="uk-textarea"></textarea>
+            ラジオボタン
+            <input class="uk-radio" type="radio">
+            <input class="uk-radio" type="radio">
+            <input class="uk-radio" type="radio">
+            <input class="uk-radio" type="radio">
+            チェック
+            <input class="uk-checkbox" type="checkbox">
+            <input class="uk-checkbox" type="checkbox">
+            <input class="uk-checkbox" type="checkbox">
+        </form>
+    </div> -->
+
+</body>
+
+</html>

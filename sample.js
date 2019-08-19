@@ -217,7 +217,7 @@ $(function(){
               </a>
               
               
-              <p><input type="checkbox" name="" id="enlarge_text">テキスト部分を長くする</p>
+              <p><input type="checkbox" name="" id="enlarge_text">ダミーテキストを長くする</p>
               
               `
               $("#result_code").val(html);
